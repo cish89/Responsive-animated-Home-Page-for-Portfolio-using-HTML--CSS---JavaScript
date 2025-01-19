@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: 0;
+  outline: 0;
+  text-transform: capitalize;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+}
+
+:root {
+  --main-clr: dodgerblue;
+  --logo-fz: calc(16px + (35 - 16) * ((100vw - 300px) / (1920 - 300)));
+  --small-fz: calc(14px + (18 - 14) * ((100vw - 300px) / (1920 - 300)));
+  --medium-fz: calc(16px + (22 - 16) * ((100vw - 300px) / (1920 - 300)));
+  --large-fz: calc(25px + (40 - 25) * ((100vw - 300px) / (1920 - 300)));
+  --big-fz: calc(40px + (80 - 40) * ((100vw - 300px) / (1920 - 300)));
+}
+
+section {
+  padding: 2rem 5%;
+  min-height: 100vh;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #0d1117;
+}
+
+/* header section start */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #0d1117;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10%;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: var(--logo-fz);
+  color: var(--main-clr);
+}
+
+header .navbar ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header .navbar ul li a {
+  font-size: var(--small-fz);
+  color: #fff;
+  transition: 0.3s;
+}
+
+header .navbar ul li a:hover {
+  color: var(--main-clr);
+}
+
+#menu {
+  display: none;
+}
+
+label {
+  width: 4rem;
+  height: 4rem;
+  border: 0.2rem solid var(--main-clr);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+label .fa-times {
+  display: none;
+}
+
+/* header section end */
+
+/* home section start */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 10rem;
+}
+
+.home .content-box {
+  flex: 1 1 40rem;
+  padding: 1rem 2.5rem;
+}
+
+.home .img-box {
+  flex: 1 1 35rem;
+}
+
+.home .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home .content-box h3 {
+  font-size: var(--large-fz);
+  color: #fff;
+}
+
+.home .content-box h2 {
+  font-size: var(--big-fz);
+  color: #fff;
+}
+
+.home .content-box p {
+  font-size: var(--small-fz);
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.home .content-box .social-links {
+  margin: 3rem 0rem;
+}
+
+.home .content-box .social-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  background: transparent;
+  border: 0.1rem solid var(--main-clr);
+  border-radius: 50%;
+  font-size: var(--medium-fz);
+  color: var(--main-clr);
+  margin: 0rem 0.3rem;
+  transition: 0.5s ease;
+}
+
+.home .content-box .social-links a:hover {
+  background: var(--main-clr);
+  color: #0d1117;
+  box-shadow: 0 0 20px var(--main-clr);
+}
+
+.home .content-box .btn {
+  display: inline-block;
+  padding: 1.5rem 2.5rem;
+  background: var(--main-clr);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px var(--main-clr);
+  font-size: var(--small-fz);
+  color: #0d1117;
+  font-weight: 600;
+}
+
+.home .content-box span.typed-text {
+  color: var(--main-clr);
+  text-shadow: 0 0 20px var(--main-clr);
+}
+
+.typed-cursor {
+  color: var(--main-clr);
+}
+
+/* home section end */
+
+/* media queries */
+
+@media (max-width: 600px) {
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0d1117;
+    width: 100%;
+    border-top: 0.1rem solid var(--main-clr);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    display: none;
+  }
+
+  header .navbar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  label {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu:checked ~ .navbar {
+    display: block;
+  }
+
+  #menu:checked ~ label .fa-bars {
+    display: none;
+  }
+
+  #menu:checked ~ label .fa-times {
+    display: block;
+  }
+}
